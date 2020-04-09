@@ -13,7 +13,7 @@ function preload (){
  jumpSound = loadSound('assets/Jump.mp3')
  game.initialize();
  startImg = createImg("assets/StartScreen.gif").hide();
- endImg = createImg("assets/EndScreen.gif").hide();
+//// endImg = createImg("assets/EndScreen.gif").hide();
 }
 
 function setup() { 
@@ -42,15 +42,7 @@ function setup() {
       coughSound.play();
       coughSound.loop();
       coughSound.setVolume(1);
-      
-     // game.background.images.splice(0, 4)
-     // game.background.images.src.forEach(element => {
-       // element.hide();
-     // });
-     // game.items.splice(0, game.items.length);
-     /* game.people.img.forEach(element => {
-        element.hide();
-      }); */
+      noLoop();
     }
  
   }
@@ -60,7 +52,6 @@ function setup() {
     if (keyCode === 87) {
       game.player.jump();
       jumpSound.play();
-    // game.player.img = createImg("assets/Player Jumping.gif").show();
       clear();
     }
     // S key
@@ -77,5 +68,5 @@ function setup() {
       window.location.reload();
     }
 
-   
+
   }

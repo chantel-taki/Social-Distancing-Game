@@ -64,10 +64,10 @@ class Game {
           this.people = this.people.filter((person) => { 
             if (person.collision(this.player)){
              this.endGame = true;
-             person.img.hide();
-          } else{
+          } else {
            return !person.collision(this.player);
           }
+            
           });
 
                  //push items to array at frame count
@@ -89,7 +89,11 @@ class Game {
                    }
                    if (this.endGame){
                     item.img.hide();
-                   }
+                    return false
+                  }
+                  else{
+                    return true
+                  }
                   })
 
                   if(this.endGame){
