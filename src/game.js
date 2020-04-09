@@ -37,6 +37,7 @@ class Game {
     // check if collided with player, if so, end the game
     this.obstacles = this.obstacles.filter((obstacle) => {
       if (obstacle.collision(this.player)) {
+        obstacle.img.hide();
         this.endGame = true;
       } else {
         return !obstacle.collision(this.player);
@@ -52,6 +53,7 @@ class Game {
     // check if collided with player, if so, end the game
     this.people = this.people.filter((person) => {
       if (person.collision(this.player)) {
+        person.img.hide();
         this.endGame = true;
       } else {
         return !person.collision(this.player);
@@ -66,11 +68,8 @@ class Game {
       item.display();
     });
     //filter and hide items once collected
-    console.log(this.items.length);
     this.items = this.items.filter((item, index) => {
       if (item.collect(this.player)) {
-        // console.log("collected");
-        console.log("hello");
         item.img.hide();
         this.score += 1;
         return false;
@@ -78,15 +77,24 @@ class Game {
         return true;
       }
     });
-    console.log(this.items.length);
+   // console.log(this.items.length);
     this.items.forEach((item) => {
       if (this.endGame) {
         item.img.hide();
         document.querySelector("canvas").style.visibility = "hidden";
       }
     });
-    /*  if(this.endGame){
-                    noLoop();
-                  } */
+    this.people.forEach((person) => {
+      if (this.endGame) {
+        person.img.hide();
+        document.querySelector("canvas").style.visibility = "hidden";
+      }
+    });
+    this.obstacles.forEach((obstacle) => {
+      if (this.endGame) {
+        obstacle.img.hide();
+        document.querySelector("canvas").style.visibility = "hidden";
+      }
+    });
   }
 }

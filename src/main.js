@@ -1,4 +1,5 @@
 let game = new Game();
+let value = 0;
 //starting screen
 let startImg;
 let endImg;
@@ -29,11 +30,14 @@ function draw() {
   }
   if (game.endGame) {
     endImg.show();
+    //hide player and start img
     game.player.img.hide();
     startImg.hide();
+    //play coughing sound at end screen
     coughSound.play();
     coughSound.loop();
     coughSound.setVolume(1);
+    //hide corona/people/tp
     game.items.forEach((item) => {
       item.img.hide();
     });
@@ -65,4 +69,14 @@ function keyPressed() {
   if (keyCode === 13 && game.endGame === true) {
     window.location.reload();
   }
+}
+
+function keyReleased(){
+  if (value === 0) {
+    value = 87;
+    console.log("release");
+  } else {
+    value = 0;
+  }
+  return false;
 }
