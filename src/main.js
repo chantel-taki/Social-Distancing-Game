@@ -41,6 +41,9 @@ function draw() {
     game.items.forEach((item) => {
       item.img.hide();
     });
+    game.sanitizer.forEach((item) => {
+      item.img.hide();
+    });
     game.people.forEach((person) => {
       person.img.hide();
     });

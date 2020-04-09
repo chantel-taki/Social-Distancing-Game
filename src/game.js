@@ -13,6 +13,7 @@ class Game {
     this.player = new Player();
     this.background = new Background();
     this.items = [];
+    this.sanitizer = [];
     //  }
   }
   // setup the player in game
@@ -93,6 +94,32 @@ class Game {
     this.obstacles.forEach((obstacle) => {
       if (this.endGame) {
         obstacle.img.hide();
+        document.querySelector("canvas").style.visibility = "hidden";
+      }
+    });
+
+    //push items to array at frame count
+    if (frameCount % 175 === 0) {
+      this.sanitizer.push(new Sanitizer());
+    }
+    //display items
+    this.sanitizer.forEach((item) => {
+      item.display();
+    });
+    //filter and hide items once collected
+    this.sanitizer = this.sanitizer.filter((item, index) => {
+      if (item.collect(this.player)) {
+        item.img.hide();
+        this.score += 1;
+        return false;
+      } else {
+        return true;
+      }
+    });
+   // console.log(this.items.length);
+    this.sanitizer.forEach((item) => {
+      if (this.endGame) {
+        item.img.hide();
         document.querySelector("canvas").style.visibility = "hidden";
       }
     });
