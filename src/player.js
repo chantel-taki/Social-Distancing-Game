@@ -3,7 +3,7 @@ class Player {
         this.img = createImg("assets/PlayerRunning.gif").hide();
         this.velocity = 0;
         this.gravity = 0.5;
-        this.jmpImg = createImg("assets/PlayerJumping.gif").hide();
+       this.jmpImg = createImg("assets/PlayerJumping.gif").hide();
 
     }
     //setup player
@@ -15,10 +15,7 @@ class Player {
     }
     //display player and set up speed & gravity for player
     display() {
-        
-      
-        this.img.position(this.x, this.y).show();
-        
+       this.img.position(this.x, this.y).show();
         this.velocity += this.gravity;
         this.y += this.velocity;
         if (this.y > height - this.height) {

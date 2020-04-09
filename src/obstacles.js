@@ -42,7 +42,7 @@ class People {
         this.img = createImg("assets/PersonIdle.gif").hide();
     }
     display(){
-        this.x-=12;
+        this.x-=8;
         this.img.position(this.x, this.y).show();
     }
     collision(player) {

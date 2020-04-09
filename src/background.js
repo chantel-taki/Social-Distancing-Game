@@ -1,12 +1,11 @@
 
 class Background {
     constructor() {
-       // this.random = 0;
         this.images = [
-            { src: loadImage("assets/Layer1.png"), x: 0, speed: 8 },
-            { src: loadImage("assets/Layer2.png"), x: 0, speed: 8 },
-            { src: loadImage("assets/Layer3.png"), x: 0, speed: 10 },
-            { src: loadImage("assets/Layer4.png"), x: 0, speed: 10 },
+            { src: loadImage("assets/Layer1.png"), x: 0, speed: 9 },
+            { src: loadImage("assets/Layer2.png"), x: 0, speed: 9 },
+            { src: loadImage("assets/Layer3.png"), x: 0, speed: 12 },
+            { src: loadImage("assets/Layer4.png"), x: 0, speed: 12 },
         ];
     }
     move(img) {

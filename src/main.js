@@ -1,8 +1,14 @@
 let game = new Game();
 let value = 0;
+let score = localStorage.getItem("gameScore");
 //starting screen
 let startImg;
 let endImg;
+
+if (!score) {
+  score = 0;
+}
+
 function preload() {
   soundFormats("mp3", "ogg");
   mySound = loadSound("assets/happy.mp3");
@@ -23,6 +29,9 @@ function draw() {
   clear();
   if (game.startGame && !game.endGame) {
     game.display();
+    score = game.score;
+    textSize(100);
+    text("Score: " + score, 15, 80);
     //console.log(frameRate());
     frameRate(500);
   } else if (!game.startGame && !game.endGame) {
@@ -30,6 +39,7 @@ function draw() {
   }
   if (game.endGame) {
     endImg.show();
+    score = game.score;
     //hide player and start img
     game.player.img.hide();
     startImg.hide();
@@ -61,9 +71,10 @@ function keyPressed() {
     clear();
   }
   // S key
+  /*
   if (keyCode === 83) {
     game.player.duck();
-  }
+  } */
   if (keyCode === 13) {
     game.startGame = true;
     startImg.hide();
@@ -74,7 +85,7 @@ function keyPressed() {
   }
 }
 
-function keyReleased(){
+/*function keyReleased(){
   if (value === 0) {
     value = 87;
     console.log("release");
@@ -82,4 +93,4 @@ function keyReleased(){
     value = 0;
   }
   return false;
-}
+} */
