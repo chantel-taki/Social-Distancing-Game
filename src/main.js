@@ -37,6 +37,12 @@ function draw() {
     game.items.forEach((item) => {
       item.img.hide();
     });
+    game.people.forEach((person) => {
+      person.img.hide();
+    });
+    game.obstacles.forEach((obstacle) => {
+      obstacle.img.hide();
+    });
     noLoop();
   }
 }
