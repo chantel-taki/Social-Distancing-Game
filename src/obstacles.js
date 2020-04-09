@@ -1,14 +1,14 @@
 
 class Obstacles {
     constructor(){
-        this.height = 10;
-        this.width = 10;
+        this.height = 15;
+        this.width = 15;
         this.x = width;
         this.y = 400;
         this.img = createImg("assets/corona.png").hide();
     }
     display(){
-        this.x--;
+        this.x-= 15;
         this.img.position(this.x, this.y).show();
     }
 
@@ -42,7 +42,7 @@ class People {
         this.img = createImg("assets/PersonIdle.gif").hide();
     }
     display(){
-        this.x--;
+        this.x-=12;
         this.img.position(this.x, this.y).show();
     }
     collision(player) {

@@ -27,7 +27,7 @@ class Player {
     }
     //jump function to be called when pressing W
     jump(){
-        this.velocity = -15;
+        this.velocity = -20;
         clear();
         //this.jmpImg.show();
 

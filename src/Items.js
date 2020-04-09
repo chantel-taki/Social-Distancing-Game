@@ -8,7 +8,7 @@ class Items {
         this.img = createImg("assets/TP.png").hide();
     }
     display(){
-        this.x--;
+        this.x -=8;
         this.img.position(this.x, this.y).show();
     }
     collect(player) {
@@ -31,4 +31,11 @@ class Items {
 
 
     }
+}
+
+/*class Sanitizer extends Items {
+    constructor(){
+       super(height, width, x, y);
+        this.img = createImg("assets/TP.png").hide();
+    }*/
 }
