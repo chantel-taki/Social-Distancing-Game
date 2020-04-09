@@ -1,14 +1,14 @@
 
 class Obstacles {
     constructor(){
-        this.height = 15;
-        this.width = 15;
+        this.height = 8;
+        this.width = 8;
         this.x = width;
-        this.y = 400;
+        this.y = 175;
         this.img = createImg("assets/corona.png").hide();
     }
     display(){
-        this.x-= 15;
+        this.x -= 1.3;
         this.img.position(this.x, this.y).show();
     }
 
@@ -35,14 +35,14 @@ class Obstacles {
 
 class People {
     constructor(){
-        this.height = 20;
-        this.width = 20;
+        this.height = 9;
+        this.width = 9;
         this.x = width;
-        this.y = 600;
+        this.y = 300;
         this.img = createImg("assets/PersonIdle.gif").hide();
     }
     display(){
-        this.x-=8;
+        this.x -= 2;
         this.img.position(this.x, this.y).show();
     }
     collision(player) {

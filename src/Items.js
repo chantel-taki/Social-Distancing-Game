@@ -4,11 +4,11 @@ class Items {
         this.height = 5;
         this.width = 5;
         this.x = width;
-        this.y = 1000;
+        this.y = 480;
         this.img = createImg("assets/TP.png").hide();
     }
     display(){
-        this.x -=8;
+        this.x -=2;
         this.img.position(this.x, this.y).show();
     }
     collect(player) {
@@ -38,11 +38,11 @@ class Items {
             this.height = 5;
             this.width = 5;
             this.x = width;
-            this.y = 1000;
+            this.y = 480;
             this.img = createImg("assets/Sanitizer.png").hide();
         }
         display(){
-            this.x -=8;
+            this.x -=2;
             this.img.position(this.x, this.y).show();
         }
         collect(player) {

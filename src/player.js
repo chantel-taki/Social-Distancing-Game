@@ -9,9 +9,9 @@ class Player {
     //setup player
     setup(){
         this.height = this.img.height;
-        this.width = this.img.width - 70;
-        this.x = 100;
-        this.y = 400;
+        this.width = this.img.width - 35;
+        this.x = 50;
+        this.y = 200;
     }
     //display player and set up speed & gravity for player
     display() {
@@ -24,14 +24,14 @@ class Player {
     }
     //jump function to be called when pressing W
     jump(){
-        this.velocity = -20;
+        this.velocity = -18;
         clear();
         //this.jmpImg.show();
 
     }
     //duck function to be called when pressing S
-    duck(){
+   /* duck(){
         console.log("ducking");
-        this.y += 40;
-    }
+        this.y += 20;
+    } */
 }

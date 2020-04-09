@@ -19,7 +19,7 @@ function preload() {
   endImg = createImg("assets/EndScreen.gif").hide();
 }
 function setup() {
-  createCanvas(1920, 1080);
+  createCanvas(960, 540);
   game.setup();
   mySound.play();
   mySound.loop();
@@ -30,8 +30,8 @@ function draw() {
   if (game.startGame && !game.endGame) {
     game.display();
     score = game.score;
-    textSize(100);
-    text("Score: " + score, 15, 80);
+    textSize(50);
+    text("Score: " + score, 8, 40);
     //console.log(frameRate());
     frameRate(500);
   } else if (!game.startGame && !game.endGame) {
