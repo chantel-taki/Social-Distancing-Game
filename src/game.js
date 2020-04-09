@@ -36,7 +36,7 @@ class Game {
         text("Score: " + this.score, 15, 80);
 
         //push obstacles  to array at frame count
-        if (frameCount % 800 === 0) {
+        if (frameCount % 900 === 0) {
           this.obstacles.push(new Obstacles());
          }
          this.obstacles.forEach((obstacle) => {
@@ -53,7 +53,7 @@ class Game {
          }); 
 
          //push people to array at frame count
-         if (frameCount % 1000 === 0) {
+         if (frameCount % 1250 === 0) {
            this.people.push(new People());
           }
           this.people.forEach((person) => {
@@ -64,43 +64,32 @@ class Game {
           this.people = this.people.filter((person) => { 
             if (person.collision(this.player)){
              this.endGame = true;
+             person.img.hide();
           } else{
            return !person.collision(this.player);
           }
           });
 
                  //push items to array at frame count
-                 if (frameCount % 400 === 0) {
+                 if (frameCount % 200 === 0) {
                    this.items.push(new Items());
                   }
                 
-                  
+                  //display items
                     this.items.forEach((item) => {
                     item.display();
                   });
-       
-                  // check if collected by player, if so, add to score
-                  /*this.items = this.items.filter((item, index) => { 
-                    if (item.collect(this.player)){
-                     console.log("collected");
-                     console.log(this.items, this.items[index])
-                     this.items.splice(index, 1);
-                     this.score++;
-                  } else{
-                   return !item.collect(this.player);
-                  }
-                  }); */
+
+                  //filter and hide items once collected
                   this.items.filter((item, index) => { 
                     if (item.collect(this.player)){
-                     console.log("collected");
-                   //  this.items.splice(index, 1);
-item.img.hide()
-                     this.score++;
-                     return false
-                  }
-                  else{
-                    return true
-                  }
+                    // console.log("collected");
+                     item.img.hide();
+                     this.score += 1;
+                   }
+                   if (this.endGame){
+                    item.img.hide();
+                   }
                   })
 
                   if(this.endGame){
