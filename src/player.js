@@ -2,14 +2,14 @@ class Player {
     constructor(){
         this.img = createImg("assets/PlayerRunning.gif").hide();
         this.velocity = 0;
-        this.gravity = 0.5;
+        this.gravity = 0.6;
         this.jmpImg = createImg("assets/PlayerJumping.gif").hide();
         this.jumpCount = 0;
     }
     //setup player
     setup(){
         this.height = this.img.height;
-        this.width = this.img.width - 35;
+        this.width = this.img.width - 18;
         this.x = 50;
         this.y = 200;
     }
