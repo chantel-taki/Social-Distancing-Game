@@ -1,7 +1,9 @@
 html, body {
     margin: 0;
     padding: 0;
-    background: turquoise;
+    
   }
-  
-
+  body{
+    background:url(/assets/back.png) no-repeat center center fixed;  
+    background-size: cover;
+}
