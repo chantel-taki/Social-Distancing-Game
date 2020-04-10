@@ -26,8 +26,8 @@ class Player {
     //jump function to be called when pressing W
     jump(){
         this.jumpCount++;
-        if (this.jumpCount < 3) {
-            this.velocity = -19;
+        if (this.jumpCount < 2) {
+            this.velocity = -23;
         }
         
         clear();

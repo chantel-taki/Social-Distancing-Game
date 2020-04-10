@@ -8,7 +8,7 @@ class Obstacles {
         this.img = createImg("assets/corona.png").hide();
     }
     display(){
-        this.x -= 1.5;
+        this.x -= 4;
         this.img.position(this.x, this.y).show();
     }
 
@@ -42,7 +42,7 @@ class People {
         this.img = createImg("assets/PersonIdle.gif").hide();
     }
     display(){
-        this.x -= 2;
+        this.x -= 4;
         this.img.position(this.x, this.y).show();
     }
     collision(player) {

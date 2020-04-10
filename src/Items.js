@@ -8,7 +8,7 @@ class Items {
         this.img = createImg("assets/TP.png").hide();
     }
     display(){
-        this.x -=2;
+        this.x -=4;
         this.img.position(this.x, this.y).show();
     }
     collect(player) {
@@ -42,7 +42,7 @@ class Items {
             this.img = createImg("assets/Sanitizer.png").hide();
         }
         display(){
-            this.x -=2;
+            this.x -=4;
             this.img.position(this.x, this.y).show();
         }
         collect(player) {

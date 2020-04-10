@@ -26,7 +26,7 @@ class Game {
     this.player.display();
 
     //push obstacles  to array at frame count
-    if (frameCount % 700 === 0) {
+    if (frameCount % 720 === 0) {
       this.obstacles.push(new Obstacles());
     }
     this.obstacles.forEach((obstacle) => {
@@ -79,7 +79,7 @@ class Game {
     });
     
     //push items to array at frame count
-    if (frameCount % 193 === 0) {
+    if (frameCount % 195 === 0) {
       this.sanitizer.push(new Sanitizer());
     }
     //display items
