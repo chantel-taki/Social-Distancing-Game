@@ -8,7 +8,7 @@ class Obstacles {
         this.img = createImg("assets/corona.png").hide();
     }
     display(){
-        this.x -= 1.3;
+        this.x -= 1.5;
         this.img.position(this.x, this.y).show();
     }
 
@@ -35,8 +35,8 @@ class Obstacles {
 
 class People {
     constructor(){
-        this.height = 9;
-        this.width = 9;
+        this.height = 25;
+        this.width = 12;
         this.x = width;
         this.y = 300;
         this.img = createImg("assets/PersonIdle.gif").hide();

@@ -3,8 +3,8 @@ class Player {
         this.img = createImg("assets/PlayerRunning.gif").hide();
         this.velocity = 0;
         this.gravity = 0.5;
-       this.jmpImg = createImg("assets/PlayerJumping.gif").hide();
-
+        this.jmpImg = createImg("assets/PlayerJumping.gif").hide();
+        this.jumpCount = 0;
     }
     //setup player
     setup(){
@@ -19,12 +19,17 @@ class Player {
         this.velocity += this.gravity;
         this.y += this.velocity;
         if (this.y > height - this.height) {
+            this.jumpCount = 0;
             this.y = height - this.height;
         }
     }
     //jump function to be called when pressing W
     jump(){
-        this.velocity = -18;
+        this.jumpCount++;
+        if (this.jumpCount < 3) {
+            this.velocity = -19;
+        }
+        
         clear();
         //this.jmpImg.show();
 

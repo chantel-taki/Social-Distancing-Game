@@ -31,7 +31,7 @@ function draw() {
     game.display();
     score = game.score;
     textSize(50);
-    text("Score: " + score, 8, 40);
+    text("Score: " + score, 700, 40);
     //console.log(frameRate());
     frameRate(500);
   } else if (!game.startGame && !game.endGame) {
@@ -78,7 +78,7 @@ function keyPressed() {
   if (keyCode === 13) {
     game.startGame = true;
     startImg.hide();
-    // console.log("start");
+
   }
   if (keyCode === 13 && game.endGame === true) {
     window.location.reload();
