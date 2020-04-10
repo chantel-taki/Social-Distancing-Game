@@ -2,7 +2,7 @@ class Player {
     constructor(){
         this.img = createImg("assets/PlayerRunning.gif").hide();
         this.velocity = 0;
-        this.gravity = 0.6;
+        this.gravity = 0.5;
         this.jmpImg = createImg("assets/PlayerJumping.gif").hide();
         this.jumpCount = 0;
     }
@@ -27,7 +27,7 @@ class Player {
     jump(){
         this.jumpCount++;
         if (this.jumpCount < 2) {
-            this.velocity = -23;
+            this.velocity = -21;
         }
         
         clear();

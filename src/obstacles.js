@@ -1,14 +1,14 @@
 
 class Obstacles {
     constructor(){
-        this.height = 10;
-        this.width = 10;
+        this.height = 6;
+        this.width = 6;
         this.x = width;
-        this.y = 170;
+        this.y = 180;
         this.img = createImg("assets/corona.png").hide();
     }
     display(){
-        this.x -= 6;
+        this.x -= 8;
         this.img.position(this.x, this.y).show();
     }
 
@@ -39,11 +39,11 @@ class People {
         this.x = width;
         this.y = 300;
         this.img = createImg("assets/PersonIdle.gif").hide();
-        this.height = 155;
-        this.width = 220;
+        this.height = 80;
+        this.width = 60;
     }
     display(){
-        this.x -= 4;
+        this.x -= 5;
         this.img.position(this.x, this.y).show();
     }
     collision(player) {
