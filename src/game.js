@@ -13,6 +13,7 @@ class Game {
     this.background = new Background();
     this.items = [];
     this.sanitizer = [];
+    grabSound = loadSound("assets/pop.ogg");
   }
 
   // setup the player in game
@@ -70,6 +71,7 @@ class Game {
     //filter and hide items once collected
     this.items = this.items.filter((item, index) => {
       if (item.collect(this.player)) {
+        grabSound.play();
         item.img.hide();
         this.score += 1;
         return false;
@@ -89,6 +91,7 @@ class Game {
     //filter and hide items once collected
     this.sanitizer = this.sanitizer.filter((item, index) => {
       if (item.collect(this.player)) {
+        grabSound.play();
         item.img.hide();
         this.score += 1;
         return false;

@@ -14,6 +14,7 @@ function preload() {
   mySound = loadSound("assets/happy.mp3");
   coughSound = loadSound("assets/cough.mp3");
   jumpSound = loadSound("assets/Jump.mp3");
+  grabSound = loadSound("assets/pop.ogg");
   game.initialize();
   startImg = createImg("assets/StartScreen.gif").hide();
   endImg = createImg("assets/EndScreen.gif").hide();
@@ -34,6 +35,9 @@ function draw() {
     text("Score: " + score, 700, 40);
     //console.log(frameRate());
     frameRate(500);
+    //if(game.items.collect){
+    //  grabSound.play();
+   // }
   } else if (!game.startGame && !game.endGame) {
     startImg.show();
   }
